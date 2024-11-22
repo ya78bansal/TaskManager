@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body class="light-theme">
+    <div class="sidebar">
+        <button class="add-task" id="open-modal">+ Add task</button>
+        <ul class="menu" id="menu">
+            <li class="menu-item active" data-section="inbox">Inbox</li>
+            <li class="menu-item" data-section="today">Today</li>
+            <li class="menu-item" data-section="upcoming">Upcoming</li>
+            <li class="menu-item" data-section="completed">Past due date</li>
+            <li class="menu-item" data-section="done">Completed</li>
+            <li class="menu-item" data-section="filters-labels">Filters & Labels</li>
+        </ul>
+
+         <!-- Theme Toggle Button
+         <button id="theme-toggle" aria-label="Toggle Theme" class="theme-toggle">
+            <img src="sun.webp" id="theme-icon" alt="Theme Icon">
+        </button> ->
+
+        <button id="theme-toggle" aria-label="Toggle Theme" class="theme-toggle">
+            <div class="toggle-inner">
+                <span class="icon" id="theme-icon">
+                    <i class="fas fa-sun"></i> // Font Awesome icon for sun -->
+                </span>
+                <span class="mode-text" id="mode-text">Daymode</span>
+            </div>
+        </button>
+        
+
+    </div>
+    <div class="main-content" id="content">
+        <div id="inbox" class="content-section active">
+            <h2>&nbsp;Inbox</h2>
+
+                         <!-- Search bar -->
+            <div class="search-container">
+                <input type="text" id="searchTask" placeholder="&nbsp;&nbsp;Search tasks...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+      
+            <div class="tasks-list" id="tasks-list-inbox">
+                <!-- Tasks will be appended here -->
+            </div>
+            <div class="empty-state" id="empty-state-inbox">
+                <img src="peace.png" alt="empty-state">
+                <h3>Your peace of mind is priceless</h3>
+               
+            </div>
+        </div>
+        <!-- Other content sections .... -->
+
+        <div id="filters-labels" class="content-section">
+            <h2>&nbsp;Filters & Labels</h2>
+        
+            <div class="kanban-board">
+                <div class="kanban-column" data-status="All-Task">
+                    <div class="kanban-column-header All-Task">All Tasks</div>
+                    <div class="kanban-cards"></div>
+                </div>
+                <div class="kanban-column" data-status="not-started">
+                    <div class="kanban-column-header not-started">Not started</div>
+                    <div class="kanban-cards"></div>
+                </div>
+                <div class="kanban-column" data-status="overdue">
+                    <div class="kanban-column-header overdue">Overdue</div>
+                    <div class="kanban-cards"></div>
+                </div>
+                <div class="kanban-column" data-status="in-progress">
+                    <div class="kanban-column-header in-progress">In progress</div>
+                    <div class="kanban-cards"></div>
+                </div>
+                <div class="kanban-column" data-status="done">
+                    <div class="kanban-column-header done">Done</div>
+                    <div class="kanban-cards"></div>
+                </div>
+            </div>
+
+        </div>
+            <!-- Task Modal -->
+    <div class="task-modal" id="task-modal">
+        <div class="task-modal-content">
+            <h3>Task name</h3>
+    
+            <label for="task-name"></label>
+            <input type="text" id="task-name" placeholder="Task name">
+    
+            <label for="task-desc"></label>
+            <textarea id="task-desc" placeholder="Description"></textarea>
+    
+            <div class="task-options">
+                <label for="task-duedate">Due Date:</label><br>
+                <input id="task-duedate" type="date" />
+    
+                <label for="task-priority">Priority:</label>
+                <select id="task-priority">
+                    <option value="5">Very High</option>
+                    <option value="4">High</option>
+                    <option value="3">Medium</option>
+                    <option value="2">Low</option>
+                    <option value="1">Very Low</option>
+                </select>
+            </div>
+    
+            <div class="task-footer">
+                <button id="cancel-task" class="cancel-btn" type="button">Cancel</button>
+                <button id="add-task" class="add-task-btn" type="button">Add task</button>
+            </div>
+        </div>
+    </div>
+    
+
+         <!--- MS... Begin -->
+         <div id="today" class="content-section">
+            <h2>&nbsp;Today</h2>
+            <div class="tasks-list" id="tasks-list-today">
+                <!-- Tasks will be appended here -->
+            </div>
+        </div>
+
+        <div id="upcoming" class="content-section">
+            <h2>&nbsp;Upcoming</h2>
+            <div class="tasks-list" id="tasks-list-upcoming">
+                <!-- Tasks will be appended here -->
+            </div>
+        </div>
+
+        <div id="completed" class="content-section">
+            <h2>&nbsp;Past due date </h2>
+            <div class="tasks-list" id="tasks-list-completed">
+                <!-- Tasks will be appended here -->
+            </div>
+        </div>
+        
+        <div id="done" class="content-section">
+            <h2>&nbsp;Completed </h2>
+            <div class="tasks-list" id="tasks-list-done">
+                <!-- Tasks will be appended here -->
+            </div>
+        </div>
+       
+
+        <!--- MS... End -->
+
+
+
+
+
+
+    </div>
+
+    <!-- Task Modal -->
+    <div class="task-modal" id="task-modal">
+        <div class="task-modal-content">
+            <h3>Task name</h3>
+    
+            <label for="task-name"></label>
+            <input type="text" id="task-name" placeholder="Task name">
+    
+            <label for="task-desc"></label>
+            <textarea id="task-desc" placeholder="Description"></textarea>
+    
+            <div class="task-options">
+                <label for="task-duedate">Due Date:</label><br>
+                <input id="task-duedate" type="date" />
+    
+                <label for="task-priority">Priority:</label>
+                <select id="task-priority">
+                    <option value="5">Very High</option>
+                    <option value="4">High</option>
+                    <option value="3">Medium</option>
+                    <option value="2">Low</option>
+                    <option value="1">Very Low</option>
+                </select>
+            </div>
+    
+            <div class="task-footer">
+                <button id="cancel-task" class="cancel-btn" type="button">Cancel</button>
+                <button id="add-task" class="add-task-btn" type="button">Add task</button>
+            </div>
+        </div>
+    </div>
+    
+
+<script src="script.js"></script>
+<script src="script2.js"></script>
+
+</body>
+</html> 
+
+
+
+

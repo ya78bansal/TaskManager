@@ -1,0 +1,103 @@
+
+
+.kanban-board {
+    display: flex;
+    gap: 20px;
+}
+
+.kanban-column {
+    background-color: #e3e3e3;
+    border-radius: 8px;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.kanban-column-header {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.not-started {
+    background-color: #5A5A5A;
+}
+.All-Task {
+    background-color: #2dc0c8;
+}
+
+.overdue {
+    background-color: #dc3545;
+}
+
+.in-progress {
+    background-color: #ffc107;
+}
+
+.done {
+    background-color: #28a745;
+}
+
+.kanban-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kanban-card {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kanban-card.dragging {
+    opacity: 0.5;
+}
+
+.card-options {
+    display: flex;
+    gap: 5px;
+}
+
+.card-options button {
+    background-color: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+}
+
+.card-options button:hover {
+    color: #333;
+}
+.task-item {
+    position: relative; /* Ensure the delete icon is positioned correctly */
+    padding: 10px; /* Add some padding to the task item */
+}
+
+.task-delete-icon {
+    position: absolute;
+    bottom: 8px; /* Slight gap from the bottom */
+    right: 8px; /* Slight gap from the right */
+    font-size: 14px; /* Slightly larger size for visibility */
+    color: #888; /* Grey color for the delete icon */
+    cursor: pointer;
+}
+
+.task-delete-icon:hover {
+    color: #555; /* Darker grey on hover */
+}
+
+
+
